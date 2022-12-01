@@ -14,3 +14,12 @@ a {
 * {
   box-sizing: border-box;
 }
+
+input,
+input:focus-visible {
+  border-color: transparent;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}

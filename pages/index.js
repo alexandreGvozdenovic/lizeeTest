@@ -1,6 +1,11 @@
-import Head from "next/head";
-import Image from "next/image";
+import Hero from "../components/Hero";
+import ProductList from "../components/product/ProductList";
 
 export default function Home() {
-  return <div>toto</div>;
+  return (
+    <>
+      <Hero />
+      <ProductList mt={10} title="Most popular products" />
+    </>
+  );
 }

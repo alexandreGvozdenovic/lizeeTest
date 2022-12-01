@@ -5,8 +5,10 @@ export const colors = {
     darker: "rgba(34, 34, 34, 0.66)",
   },
   white: "#FFFFFF",
-  black: "#1D1D1D",
-  pink: "#E94D7E",
+  pink: {
+    main: "#E94D7E",
+    lighter: "rgba(233, 77, 126, 0.8)",
+  },
   green: {
     main: "#28D898",
     lighter: "#A6F2C4",
@@ -14,6 +16,7 @@ export const colors = {
     dark: "#199266",
   },
   blue: "#2C3DD9",
+  black: "#222222",
 };
 const sizes = {
   xs: "0.75em",

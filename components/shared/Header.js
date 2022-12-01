@@ -30,6 +30,8 @@ const switchHeading = (n) => {
 };
 const StyledHeading = styled(Text)`
   margin: 0px;
+  font-family: ${({ serif }) =>
+    serif ? "'Noto Serif', serif" : "'Noto Sans', sans-serif"};
   ${(p) => css`
     font-size: ${switchHeading(p.$level).size}px;
     line-height: ${switchHeading(p.$level).lineheight}px;
@@ -39,9 +41,15 @@ const StyledHeading = styled(Text)`
   ${typography};
 `;
 
-function Header({ as: htmlAs, level = 1, children, ...props }) {
+function Header({ as: htmlAs, level = 1, children, serif = false, ...props }) {
   return (
-    <StyledHeading as={htmlAs || `h${level}`} $level={level} {...props}>
+    <StyledHeading
+      serif={serif}
+      as={htmlAs || `h${level}`}
+      $level={level}
+      color="black"
+      {...props}
+    >
       {children}
     </StyledHeading>
   );

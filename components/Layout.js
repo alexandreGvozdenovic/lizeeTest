@@ -1,17 +1,23 @@
-import Text from "./Text";
-import Header from "./Header";
+import TopNav from "./TopNav";
+import styled from "styled-components";
+import Footer from "./Footer";
+
+const StyledLayout = styled("div")`
+  min-height: 100vh;
+  position: relative;
+`;
+
+const StyledContentWrapper = styled("div")`
+  padding-bottom: 160px;
+`;
 export default function Layout({ children }) {
   return (
-    <div>
-      <div>
-        <Header color="blue" level={4}>
-          Header
-        </Header>
-      </div>
-      {children}
-      <div>
-        <Text fontSize>footer</Text>
-      </div>
-    </div>
+    <StyledLayout>
+      <StyledContentWrapper>
+        <TopNav />
+        {children}
+      </StyledContentWrapper>
+      <Footer />
+    </StyledLayout>
   );
 }
