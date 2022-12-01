@@ -18,13 +18,6 @@ export const colors = {
   blue: "#2C3DD9",
   black: "#222222",
 };
-const sizes = {
-  xs: "0.75em",
-  sm: "1em",
-  md: "1.5em",
-  lg: "2em",
-  xl: "3em",
-};
 const breakpoints = {
   xs: "0",
   sm: "576px",
@@ -35,48 +28,8 @@ const breakpoints = {
 
 const theme = {
   colors,
-  sizes,
   breakpoints,
   space: [0, 4, 8, 12, 16, 24, 32, 40, 48, 56, 80, 104, 128, 152],
-  radii: {
-    none: "0",
-    xxs: "8px",
-    xs: "16px",
-    sm: "24px",
-    md: "32px",
-    lg: "40px",
-    xl: "80px",
-    full: "50%",
-  },
-  // texts: {
-  //   caption2: {
-  //     fontSize: '0.625em',
-  //     lineHeight: '1.5',
-  //     color: colors.gray.main,
-  //   },
-  //   notice2: {
-  //     fontStyle: 'italic',
-  //     fontSize: '18px',
-  //     lineHeight: '27px',
-  //   },
-  //   caption: {
-  //     fontSize: '0.75em',
-  //     lineHeight: '1.5',
-  //     color: colors.gray.main,
-  //   },
-  //   small: {
-  //     fontSize: '0.875em',
-  //     lineHeight: '1.5',
-  //   },
-  //   medium: {
-  //     fontSize: '1em',
-  //     lineHeight: '1.5',
-  //   },
-  //   large: {
-  //     fontSize: '1.125em',
-  //     lineHeight: '1.5',
-  //   },
-  // },
   fontSizes: {
     xs: "0.75em",
     sm: "0.875em",

@@ -1,5 +1,5 @@
 import Layout from "../components/Layout";
-import useSWR, { SWRConfig } from "swr";
+import { SWRConfig } from "swr";
 import Head from "next/head";
 import "../styles/globals.css";
 import "react-datepicker/dist/react-datepicker.css";

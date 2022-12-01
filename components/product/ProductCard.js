@@ -1,4 +1,4 @@
-import { Box, Button, NextImage, Separator, Text, Header } from "../shared";
+import { Box, Button, NextImage, Text, Header } from "../shared";
 import { useRouter } from "next/router";
 import formatProduct from "../../utils/formatProduct";
 import Image from "next/image";

@@ -4,7 +4,6 @@ import ProductCard from "./ProductCard";
 
 export default function ProductList({ title = "Title", ...props }) {
   const { tshirts, isError, isLoading } = useTshirts();
-  console.log("ITEMS", tshirts);
 
   return (
     <Container {...props}>
@@ -17,7 +16,7 @@ export default function ProductList({ title = "Title", ...props }) {
         gridTemplateColumns="repeat(auto-fit, minmax(300px, 1fr));"
       >
         {isLoading ? (
-          <Text>skeleton</Text>
+          <Text>loading</Text>
         ) : (
           <>
             {tshirts.items.map((tshirt, index) => {

@@ -18,6 +18,9 @@ export default function Product() {
   const { tshirts, isError, isLoading } = useTshirts();
   const [tshirt, setTshirt] = useState(null);
   const [currentSize, setCurrentSize] = useState("M");
+  //   Can't make the GET request work => 404 answer
+  //   I did a good old find on the tshirts response that did work
+  //   const { tshirt, isError, isLoading } = useTshirt(slug);
 
   useEffect(() => {
     if (!!slug && !isLoading) {
@@ -25,10 +28,7 @@ export default function Product() {
       setTshirt(formatProduct(tshirts.items[index]));
     }
   }, [slug, isLoading]);
-  console.log("TSHIRT", tshirt);
-  //   const { tshirt, isError, isLoading } = useTshirt(slug);
   if (!!tshirt) {
-    console.log(Object.keys(tshirt.sizeVariants));
     return (
       <>
         <Container mt={{ xs: 4, lg: 7 }}>
@@ -72,6 +72,6 @@ export default function Product() {
       </>
     );
   } else {
-    return <div>load</div>;
+    return <div>isloading</div>;
   }
 }

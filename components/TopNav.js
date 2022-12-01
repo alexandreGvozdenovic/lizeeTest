@@ -1,10 +1,6 @@
 import Image from "next/image";
 import { Container, Box, Text, Button } from "./shared/index";
-// import Container from "./Container";
 import { useRouter } from "next/router";
-// import Box from "./shared/Box";
-// import Text from "./Text";
-// import Button from "./Button";
 
 export default function TopNav() {
   const history = useRouter();

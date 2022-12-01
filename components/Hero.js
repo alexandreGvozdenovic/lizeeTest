@@ -1,11 +1,4 @@
-import {
-  Container,
-  NextImage,
-  Box,
-  Header,
-  Text,
-  Separator,
-} from "./shared/index";
+import { Container, Box, Header, Text } from "./shared/index";
 import DateRangePicker from "./DateRangePicker";
 export default function Hero() {
   return (
