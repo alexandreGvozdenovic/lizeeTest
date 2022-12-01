@@ -8,7 +8,7 @@ const StyledLayout = styled("div")`
 `;
 
 const StyledContentWrapper = styled("div")`
-  padding-bottom: 160px;
+  padding-bottom: 200px;
 `;
 export default function Layout({ children }) {
   return (

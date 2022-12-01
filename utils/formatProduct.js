@@ -1,5 +1,5 @@
 export default function formatProduct(product) {
-  const { name, slug, images, variants, code } = product;
+  const { name, slug, images, variants, code, description } = product;
   const formattedObject = {};
   const hasDifferentPriceProp = !variants[`${code}-variant-0`].price;
 
@@ -22,6 +22,8 @@ export default function formatProduct(product) {
     };
   });
   formattedObject.sizeVariants = sizeVariants;
+  formattedObject.slug = slug;
+  formattedObject.description = description;
 
   return formattedObject;
 }

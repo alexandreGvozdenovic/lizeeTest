@@ -17,7 +17,6 @@ const StyledButton = styled("button")`
   padding-bottom: 10px;
   padding-left: ${({ icon }) => (!!icon ? "10px" : "24px")};
   padding-right: ${({ icon }) => (!!icon ? "10px" : "24px")};
-
   text-align: center;
   font-weight: 600;
   :hover {

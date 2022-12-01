@@ -1,9 +1,12 @@
 import { Box, Button, NextImage, Separator, Text, Header } from "../shared";
+import { useRouter } from "next/router";
 import formatProduct from "../../utils/formatProduct";
 import Image from "next/image";
 
 export default function ProductCard({ tshirt }) {
-  const { label, lowestPrice, picture, sizeVariants } = formatProduct(tshirt);
+  const { label, lowestPrice, picture, sizeVariants, slug } =
+    formatProduct(tshirt);
+  const history = useRouter();
 
   return (
     <Box
@@ -11,6 +14,8 @@ export default function ProductCard({ tshirt }) {
       borderColor="gray.main"
       borderRadius={16}
       overflow="hidden"
+      onClick={() => history.push(`/product/${slug}`)}
+      style={{ cursor: "pointer" }}
     >
       <Box position="relative">
         <NextImage

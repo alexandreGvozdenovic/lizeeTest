@@ -17,7 +17,7 @@ export default function Hero() {
       minHeight={600}
       alignItems="center"
     >
-      <Container>
+      <Container px={{ xs: 0, lg: 110 }}>
         <Box>
           <Header serif color="white" mb={4}>
             Reuse is the new cool

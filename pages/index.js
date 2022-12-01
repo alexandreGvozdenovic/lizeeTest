@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <ProductList mt={10} title="Most popular products" />
+      <ProductList mt={{ xs: 5, lg: 10 }} title="Most popular products" />
     </>
   );
 }
