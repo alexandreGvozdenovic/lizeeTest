@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   Box,
   Button,
@@ -8,27 +8,18 @@ import {
   Text,
 } from "../../components/shared";
 import { useRouter } from "next/router";
-import useTshirts from "../../hooks/useTshirts";
+import useTshirt from "../../hooks/useTshirt";
 import formatProduct from "../../utils/formatProduct";
 import ProductList from "../../components/product/ProductList";
 import SizeSelector from "../../components/product/SizeSelector";
 export default function Product() {
   const history = useRouter();
   const { slug } = history.query;
-  const { tshirts, isError, isLoading } = useTshirts();
-  const [tshirt, setTshirt] = useState(null);
   const [currentSize, setCurrentSize] = useState("M");
-  //   Can't make the GET request work => 404 answer
-  //   I did a good old find on the tshirts response that did work
-  //   const { tshirt, isError, isLoading } = useTshirt(slug);
+  const { tshirt, isError, isLoading } = useTshirt(slug);
 
-  useEffect(() => {
-    if (!!slug && !isLoading) {
-      const index = tshirts.items.findIndex((e) => e.slug === slug);
-      setTshirt(formatProduct(tshirts.items[index]));
-    }
-  }, [slug, isLoading]);
-  if (!!tshirt) {
+  if (!isLoading && !isError) {
+    const formatTshirt = formatProduct(tshirt);
     return (
       <>
         <Container mt={{ xs: 4, lg: 7 }}>
@@ -46,17 +37,17 @@ export default function Product() {
               height={400}
               flex={1}
             >
-              <NextImage src={tshirt.picture} />
+              <NextImage src={formatTshirt.picture} />
             </Box>
             <Box flex={1}>
               <Header serif level={2} mb={2}>
-                {tshirt.label}
+                {formatTshirt.label}
               </Header>
               <Text serif fontSize="lg" mb={5}>
-                {tshirt.sizeVariants[currentSize].price}€
+                {formatTshirt.sizeVariants[currentSize].price}€
               </Text>
               <SizeSelector
-                sizes={Object.keys(tshirt.sizeVariants)}
+                sizes={Object.keys(formatTshirt.sizeVariants)}
                 currentSize={currentSize}
                 setCurrentSize={setCurrentSize}
               />
@@ -64,7 +55,7 @@ export default function Product() {
               <Text fontWeight={2} mb={2} mt={4}>
                 Descritption:
               </Text>
-              <Text>{tshirt.description}</Text>
+              <Text>{formatTshirt.description}</Text>
             </Box>
           </Box>
         </Container>
